@@ -17,8 +17,10 @@
 package co.aospa.glyph.Settings;
 
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.widget.CompoundButton;
 
 import androidx.preference.MultiSelectListPreference;
@@ -84,6 +86,7 @@ public class ScheduleSettingsFragment extends SettingsBasePreferenceFragment
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         GlyphScheduleManager.setScheduleEnabled(requireContext(), isChecked);
         updatePreferences();
+        updateMainSettingsSwitch();
     }
 
     @Override
@@ -170,6 +173,15 @@ public class ScheduleSettingsFragment extends SettingsBasePreferenceFragment
             }
             
             mStatusPreference.setSummary(status);
+        }
+    }
+
+    private void updateMainSettingsSwitch() {
+        try {
+            Intent intent = new Intent("co.aospa.glyph.UPDATE_MAIN_SWITCH");
+            requireContext().sendBroadcast(intent);
+        } catch (Exception e) {
+            Log.e("ScheduleSettings", "Failed to update main switch", e);
         }
     }
 

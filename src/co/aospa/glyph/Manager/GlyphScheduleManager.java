@@ -318,14 +318,25 @@ public final class GlyphScheduleManager {
         setScheduleActive(context, true);
         ServiceUtils.checkGlyphService();
         updateTorchTile(context);
+        updateMainSwitch(context);
     }
 
     public static void applyScheduleEnd(Context context) {
         setScheduleActive(context, false);
         ServiceUtils.checkGlyphService();
         updateTorchTile(context);
+        updateMainSwitch(context);
     }
-    
+
+    private static void updateMainSwitch(Context context) {
+        try {
+            Intent intent = new Intent("co.aospa.glyph.UPDATE_MAIN_SWITCH");
+            context.sendBroadcast(intent);
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to update main switch", e);
+        }
+    }
+        
     private static void updateTorchTile(Context context) {
         try {
             Intent intent = new Intent("co.aospa.glyph.UPDATE_TORCH_TILE");

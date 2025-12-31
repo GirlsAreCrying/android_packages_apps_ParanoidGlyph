@@ -53,31 +53,41 @@ public final class SettingsManager {
         PreferenceManager.getDefaultSharedPreferences(ctx).edit()
                 .putBoolean(Constants.GLYPH_ENABLE, enable).apply();
 
-        return Settings.Secure.putInt(ctx.getContentResolver(),
+        boolean result = Settings.Secure.putInt(ctx.getContentResolver(),
                 Constants.GLYPH_ENABLE, enable ? 1 : 0);
+
+        return result;
     }
 
     public static boolean isGlyphEnabled() {
         Context ctx = getContext();
+        
         boolean baseEnabled = (Settings.Secure.getInt(ctx.getContentResolver(),
                 Constants.GLYPH_ENABLE, 1) != 0 
             || PreferenceManager.getDefaultSharedPreferences(ctx)
                 .getBoolean(Constants.GLYPH_ENABLE, false));
         
-        if (GlyphScheduleManager.isScheduleEnabled(ctx) && 
-            GlyphScheduleManager.isScheduleCurrentlyActive(ctx)) {
+        if (!baseEnabled) {
             return false;
         }
         
-        return baseEnabled;
+        boolean scheduleEnabled = GlyphScheduleManager.isScheduleEnabled(ctx);
+        boolean scheduleActive = GlyphScheduleManager.isScheduleCurrentlyActive(ctx);
+        
+        if (scheduleEnabled && scheduleActive) {
+            return false;
+        }
+        
+        return true;
     }
 
     public static boolean isGlyphEnabledIgnoreSchedule() {
         Context ctx = getContext();
-        return (Settings.Secure.getInt(ctx.getContentResolver(),
+        boolean enabled = (Settings.Secure.getInt(ctx.getContentResolver(),
                 Constants.GLYPH_ENABLE, 1) != 0 
             || PreferenceManager.getDefaultSharedPreferences(ctx)
                 .getBoolean(Constants.GLYPH_ENABLE, false));
+        return enabled;
     }
 
     public static boolean isGlyphFlipEnabled() {

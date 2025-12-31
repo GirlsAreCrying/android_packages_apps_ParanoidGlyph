@@ -190,6 +190,8 @@ public class SettingsFragment extends SettingsBasePreferenceFragment implements 
         IntentFilter filter = new IntentFilter("co.aospa.glyph.UPDATE_MAIN_SWITCH");
         requireContext().registerReceiver(mScheduleUpdateReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
 
+        updateMainSwitchState();
+
         mHandler.post(() -> ServiceUtils.checkGlyphService());
     }
 
@@ -279,7 +281,7 @@ public class SettingsFragment extends SettingsBasePreferenceFragment implements 
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         SettingsManager.enableGlyph(isChecked);
 
-        mSwitchBar.setChecked(SettingsManager.isGlyphEnabledIgnoreSchedule());
+        mSwitchBar.setChecked(isChecked);
 
         mFlipPreference.setEnabled(isChecked);
         mAutoBrightnessPreference.setEnabled(isChecked);
@@ -416,6 +418,7 @@ public class SettingsFragment extends SettingsBasePreferenceFragment implements 
             super.onChange(selfChange, uri);
             if (uri.equals(Settings.Secure.getUriFor(Constants.GLYPH_ENABLE))) {
                 mSwitchBar.setChecked(SettingsManager.isGlyphEnabledIgnoreSchedule());
+                updateMainSwitchState();
             }
             if (uri.equals(Settings.Secure.getUriFor(Constants.GLYPH_CALL_ENABLE))) {
                 mCallPreference.setChecked(SettingsManager.isGlyphCallEnabled());
