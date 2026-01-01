@@ -83,7 +83,10 @@ public class SettingsFragment extends SettingsBasePreferenceFragment implements 
         mSettingObserver = new SettingObserver();
         mSettingObserver.register(mContentResolver);
 
-        boolean glyphEnabled = SettingsManager.isGlyphEnabled();
+        // The main switch should represent the *base* user setting.
+        // A schedule (if enabled) may temporarily suppress Glyph, but it must not
+        // make the main toggle appear broken/unusable.
+        boolean glyphEnabled = SettingsManager.isGlyphEnabledIgnoreSchedule();
 
         mSwitchBar = (MainSwitchPreference) findPreference(Constants.GLYPH_ENABLE);
         mSwitchBar.addOnSwitchChangeListener(this);
@@ -206,7 +209,7 @@ public class SettingsFragment extends SettingsBasePreferenceFragment implements 
 
         if (preferenceKey.equals(Constants.GLYPH_FLIP_RINGER_MODE)) {
             int mode = Integer.parseInt((String) newValue);
-            Settings.Secure.putInt(mContentResolver, 
+            Settings.Secure.putInt(mContentResolver,
                 Constants.GLYPH_FLIP_RINGER_MODE, mode);
         }
 
@@ -256,7 +259,7 @@ public class SettingsFragment extends SettingsBasePreferenceFragment implements 
             updateTorchTile();
         });
     }
-    
+
     private void updateTorchTile() {
         try {
             Intent intent = new Intent("co.aospa.glyph.UPDATE_TORCH_TILE");
@@ -299,7 +302,7 @@ public class SettingsFragment extends SettingsBasePreferenceFragment implements 
             startActivity(intent);
             return true;
         }
-        
+
         return super.onPreferenceTreeClick(preference);
     }
 
@@ -344,7 +347,8 @@ public class SettingsFragment extends SettingsBasePreferenceFragment implements 
         public void onChange(boolean selfChange, Uri uri) {
             super.onChange(selfChange, uri);
             if (uri.equals(Settings.Secure.getUriFor(Constants.GLYPH_ENABLE))) {
-                mSwitchBar.setChecked(SettingsManager.isGlyphEnabled());
+                // Keep UI in sync with the base toggle, not the schedule-suppressed state.
+                mSwitchBar.setChecked(SettingsManager.isGlyphEnabledIgnoreSchedule());
             }
             if (uri.equals(Settings.Secure.getUriFor(Constants.GLYPH_CALL_ENABLE))) {
                 mCallPreference.setChecked(SettingsManager.isGlyphCallEnabled());
