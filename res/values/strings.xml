@@ -18,13 +18,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- DO NOT TRANSLATE Empty summary for dynamic preferences -->
     <string name="summary_empty" translatable="false"></string>
 
-    <!-- App Name -->
     <string name="glyph_settings_app_name">Glyph interface</string>
 
-    <!-- Glyph Settings -->
     <string name="glyph_settings_enable">Glyph lights</string>
     <string name="glyph_settings_title">Glyph interface</string>
     <string name="glyph_settings_summary">Options for Glyph lights</string>
@@ -69,7 +66,6 @@
     <string name="glyph_settings_music_visualizer_toggle_title">Music Visualizer</string>
     <string name="glyph_settings_music_visualizer_toggle_summary">DISCO LIGHTS!</string>
 
-    <!-- QS tile -->
     <string name="glyph_accessibility_quick_settings">Glyph</string>
     <string name="glyph_accessibility_quick_settings_torch">Glyph torch</string>
     <string name="glyph_accessibility_quick_settings_music_visualizer">Glyph Music Visualizer</string>
@@ -78,24 +74,20 @@
     <string name="glyph_accessibility_quick_settings_on">On</string>
     <string name="glyph_accessibility_quick_settings_unavailable">Unavailable</string>
 
-    <!-- Gesture Settings -->
     <string name="glyph_settings_gesture_title">Gesture</string>
     <string name="glyph_settings_shake_torch_toggle_title">Shake to toggle torch</string>
     <string name="glyph_settings_shake_torch_toggle_summary">Shake your device to turn Glyph torch on or off</string>
     <string name="glyph_settings_shake_sensitivity_title">Shake sensitivity</string>
     <string name="glyph_settings_shake_sensitivity_summary">Adjust how hard you need to shake (lower = more sensitive)</string>
 
-    <!-- Flip to Glyph Ringer Mode -->
     <string name="glyph_settings_flip_ringer_mode_title">Flip ringer mode</string>
     <string name="glyph_settings_flip_ringer_mode_summary">Choose ringer mode when device is flipped</string>
-    
-    <!-- Ringer Mode Options -->
+
     <string name="glyph_settings_flip_ringer_mode_follow_system">Follow system</string>
     <string name="glyph_settings_flip_ringer_mode_vibrate">Vibrate</string>
     <string name="glyph_settings_flip_ringer_mode_silent">Silent</string>
     <string name="glyph_settings_flip_ringer_mode_normal">Ring</string>
 
-    <!-- Glyph Composer -->
     <string name="glyph_settings_composer_enable_title">Enable Call glyph zone</string>
     <string name="glyph_settings_composer_enable_summary">Sync Glyphs with custom ringtone patterns</string>
     <string name="glyph_settings_composer_fallback_title">Fallback to animations</string>
@@ -107,7 +99,6 @@
     <string name="glyph_settings_composer_apply_title">Apply pattern to ringtone</string>
     <string name="glyph_settings_composer_apply_summary">Select and apply saved patterns easily</string>
 
-    <!-- Glyph Schedule Settings -->
     <string name="glyph_settings_schedule_title">Schedule Glyph</string>
     <string name="glyph_settings_schedule_summary">Automatically disable Glyph during specified hours</string>
     <string name="glyph_settings_schedule_enable_title">Enable Schedule</string>
@@ -122,8 +113,124 @@
     <string name="glyph_settings_schedule_active">Schedule active — Glyph disabled (Torch still works)</string>
     <string name="glyph_settings_schedule_inactive">Schedule inactive — Glyph enabled</string>
     <string name="glyph_settings_schedule_disabled">Schedule disabled</string>
+
     <string name="glyph_accessibility_quick_settings_disabled">Disabled</string>
     <string name="glyph_settings_active_days_title">Active Days</string>
     <string name="glyph_settings_active_days_summary">Every day</string>
     <string name="glyph_settings_active_days_dialog_title">Select Days</string>
+
+    <string name="glyph_settings_brightness_summary">Controls overall Glyph LED brightness</string>
+    <string name="glyph_settings_preview">Preview</string>
+
+    <string name="glyph_settings_notifs_essential_badge">Essential</string>
+    <string name="glyph_settings_notifs_essential_apps_title">Essential apps</string>
+
+    <!-- Schedule day labels -->
+    <string name="glyph_day_mon_short">Mon</string>
+    <string name="glyph_day_tue_short">Tue</string>
+    <string name="glyph_day_wed_short">Wed</string>
+    <string name="glyph_day_thu_short">Thu</string>
+    <string name="glyph_day_fri_short">Fri</string>
+    <string name="glyph_day_sat_short">Sat</string>
+    <string name="glyph_day_sun_short">Sun</string>
+
+    <!-- Composer Preview -->
+    <string name="glyph_pattern_preview_title">Glyph Pattern Preview</string>
+    <string name="glyph_pattern_preview_analyzing">Analyzing current ringtone...</string>
+    <string name="glyph_pattern_preview_status_no_ringtone">No ringtone set\n\nOnly fallback preview available</string>
+    <string name="glyph_pattern_preview_status_cannot_access">Current Ringtone: %1$s\n\n⚠  Cannot access file path\n\nOnly fallback preview available</string>
+    <string name="glyph_pattern_preview_status_header">Current Ringtone:\n%1$s\n\n</string>
+    <string name="glyph_pattern_preview_status_composer_found">✓ Composer Pattern Found\n  Frames: %1$d\n  Duration: %2$ds\n\nBoth preview options available:</string>
+    <string name="glyph_pattern_preview_status_pattern_invalid">✗ Pattern file invalid\n\nOnly fallback preview available</string>
+    <string name="glyph_pattern_preview_status_no_composer">✗ No Composer Pattern\n\nOnly fallback preview available</string>
+    <string name="glyph_pattern_preview_toast_stopped">Preview stopped</string>
+    <string name="glyph_pattern_preview_toast_glyph_disabled">Glyph is disabled in settings</string>
+    <string name="glyph_pattern_preview_toast_playing_composer">Playing Composer Pattern</string>
+    <string name="glyph_pattern_preview_toast_playing_fallback">Playing Fallback: %1$s</string>
+    <string name="glyph_pattern_preview_toast_completed">Preview completed</string>
+    <string name="glyph_pattern_preview_button_composer">Preview Composer</string>
+    <string name="glyph_pattern_preview_button_fallback">Preview Fallback</string>
+    <string name="glyph_pattern_preview_button_stop">Stop Preview</string>
+
+    <!-- Composer Apply -->
+    <string name="glyph_pattern_selector_title">Apply Glyph Pattern</string>
+    <string name="glyph_pattern_selector_status_initial">Select a pattern to apply to your current ringtone</string>
+    <string name="glyph_pattern_selector_loading">Loading...</string>
+    <string name="glyph_pattern_selector_none">None</string>
+    <string name="glyph_pattern_selector_status_no_patterns_create">No patterns found. Create some patterns first!</string>
+    <string name="glyph_pattern_selector_status_no_patterns_in_folder">No patterns found in SavedPattern folder</string>
+    <string name="glyph_pattern_selector_status_found_patterns">Found %1$d pattern(s). Select one to apply.</string>
+    <string name="glyph_pattern_selector_status_set_ringtone_first">Please set a ringtone first</string>
+    <string name="glyph_pattern_selector_status_cannot_access_ringtone">⚠  Cannot access ringtone file</string>
+    <string name="glyph_pattern_selector_current_ringtone">Current Ringtone:</string>
+    <string name="glyph_pattern_selector_current_pattern">Current Pattern:</string>
+    <string name="glyph_pattern_selector_available_patterns">Available Patterns:</string>
+    <string name="glyph_pattern_selector_applied_prefix">✓ Applied: %1$s</string>
+    <string name="glyph_pattern_selector_none_fallback">None (using fallback animation)</string>
+    <string name="glyph_pattern_selector_toast_no_ringtone_file">No ringtone file found</string>
+    <string name="glyph_pattern_selector_toast_pattern_applied">Pattern applied successfully!</string>
+    <string name="glyph_pattern_selector_toast_select_pattern">Please select a pattern</string>
+    <string name="glyph_pattern_selector_dialog_apply_title">Apply Pattern</string>
+    <string name="glyph_pattern_selector_dialog_apply_message">Apply pattern \u0027%1$s\u0027 to ringtone \u0027%2$s\u0027?</string>
+    <string name="glyph_pattern_selector_dialog_apply_positive">Apply</string>
+    <string name="glyph_pattern_selector_dialog_remove_title">Remove Pattern</string>
+    <string name="glyph_pattern_selector_dialog_remove_message">Remove pattern from current ringtone?\n\nThe pattern file in SavedPattern folder will NOT be deleted.</string>
+    <string name="glyph_pattern_selector_dialog_remove_positive">Remove</string>
+    <string name="glyph_pattern_selector_toast_pattern_removed">Pattern removed</string>
+    <string name="glyph_pattern_selector_toast_failed_remove">Failed to remove pattern</string>
+    <string name="glyph_pattern_selector_toast_no_pattern_to_remove">No pattern to remove</string>
+    <string name="glyph_pattern_selector_button_apply_selected">Apply Selected</string>
+    <string name="glyph_pattern_selector_button_remove_current">Remove Current</string>
+    <string name="glyph_pattern_selector_error">Error: %1$s</string>
+
+    <!-- Composer Create -->
+    <string name="glyph_pattern_creator_title">Glyph Pattern Creator</string>
+    <string name="glyph_pattern_creator_status_format">Selected: %1$d zones | Frames: %2$d | Duration: %3$.1fs</string>
+    <string name="glyph_pattern_creator_toast_select_zone">Please select at least one zone</string>
+    <string name="glyph_pattern_creator_toast_frame_added">Frame added at %1$dms</string>
+    <string name="glyph_pattern_creator_toast_playing_preview">Playing preview...</string>
+    <string name="glyph_pattern_creator_toast_preview_completed">Preview completed</string>
+    <string name="glyph_pattern_creator_toast_no_frames">No frames to save</string>
+    <string name="glyph_pattern_creator_toast_enter_filename">Please enter a filename</string>
+    <string name="glyph_pattern_creator_toast_failed_create_dir">Failed to create directory</string>
+    <string name="glyph_pattern_creator_toast_saved_to">Saved to: SavedPattern/%1$s</string>
+    <string name="glyph_pattern_creator_dialog_saved_title">Pattern Saved!</string>
+    <string name="glyph_pattern_creator_dialog_saved_message">Pattern saved to:\n%1$s\n\nWhat would you like to do?</string>
+    <string name="glyph_pattern_creator_dialog_create_another">Create Another</string>
+    <string name="glyph_pattern_creator_dialog_done">Done</string>
+    <string name="glyph_pattern_creator_dialog_view_file">View File</string>
+    <string name="glyph_pattern_creator_toast_ready_new">Ready to create new pattern</string>
+    <string name="glyph_pattern_creator_toast_file">File: %1$s</string>
+    <string name="glyph_pattern_creator_toast_error_saving">Error saving pattern: %1$s</string>
+    <string name="glyph_pattern_creator_save_dialog_title">Save Pattern</string>
+    <string name="glyph_pattern_creator_save_dialog_hint">pattern_name</string>
+    <string name="glyph_pattern_creator_save_dialog_positive">Save</string>
+
+    <string name="glyph_pattern_creator_template_loaded">Template loaded: %1$s (15s, %2$d frames)</string>
+    <string name="glyph_pattern_creator_quick_templates">Quick Templates (15s):</string>
+    <string name="glyph_pattern_creator_template_wave">Wave</string>
+    <string name="glyph_pattern_creator_template_pulse">Pulse</string>
+    <string name="glyph_pattern_creator_template_blink">Blink</string>
+    <string name="glyph_pattern_creator_template_breathe">Breathe</string>
+    <string name="glyph_pattern_creator_template_random">Random</string>
+    <string name="glyph_pattern_creator_template_all_on">All On</string>
+
+    <string name="glyph_pattern_creator_select_led_zones">Select LED Zones:</string>
+    <string name="glyph_pattern_creator_clear_selection">Clear Selection</string>
+    <string name="glyph_pattern_creator_brightness">Brightness: %1$d</string>
+    <string name="glyph_pattern_creator_duration">Duration (ms): %1$d</string>
+    <string name="glyph_pattern_creator_add_frame">Add Frame</string>
+    <string name="glyph_pattern_creator_timeline">Timeline:</string>
+    <string name="glyph_pattern_creator_frame_title">Frame %1$d: %2$dms</string>
+    <string name="glyph_pattern_creator_frame_details">%1$d zones, B:%2$d, D:%3$dms</string>
+    <string name="glyph_pattern_creator_delete">Delete</string>
+    <string name="glyph_pattern_creator_preview">Preview</string>
+    <string name="glyph_pattern_creator_stop">Stop</string>
+    <string name="glyph_pattern_creator_save">Save</string>
+
+    <!-- Schedule formatting -->
+    <string name="glyph_schedule_weekdays_summary">Weekdays (Mon–Fri)</string>
+    <string name="glyph_schedule_weekends_summary">Weekends (Sat–Sun)</string>
+    <string name="glyph_schedule_no_days_selected_summary">No days selected</string>
+
 </resources>

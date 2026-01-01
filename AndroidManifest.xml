@@ -26,6 +26,13 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Needed for LOCKED_BOOT_COMPLETED receiver flow -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <!-- Needed for ACTION_PHONE_STATE_CHANGED / telephony state -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
@@ -58,37 +65,29 @@
         </receiver>
 
         <service
-            android:name=".Services.AutoBrightnessService">
-        </service>
+            android:name=".Services.AutoBrightnessService" />
 
         <service
             android:name=".Services.CallReceiverService"
-            android:permission="android.permission.READ_PHONE_STATE">
-        </service>
+            android:permission="android.permission.READ_PHONE_STATE" />
 
         <service
-            android:name=".Services.ChargingService">
-        </service>
+            android:name=".Services.ChargingService" />
 
         <service
-            android:name=".Services.PowershareService">
-        </service>
+            android:name=".Services.PowershareService" />
 
         <service
-            android:name=".Services.FlipToGlyphService">
-        </service>
+            android:name=".Services.FlipToGlyphService" />
 
         <service
-            android:name=".Services.MusicVisualizerService">
-        </service>
+            android:name=".Services.MusicVisualizerService" />
 
         <service
-            android:name=".Services.VolumeLevelService">
-        </service>
+            android:name=".Services.VolumeLevelService" />
 
         <service
-            android:name=".Services.ShakeDetectorService">
-        </service>
+            android:name=".Services.ShakeDetectorService" />
 
         <service
             android:name=".Services.NotificationService"
@@ -109,6 +108,7 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
+
         <service
             android:name=".Tiles.TorchTileService"
             android:exported="true"
@@ -119,6 +119,7 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
+
         <service
             android:name=".Tiles.MusicVisualizerTileService"
             android:exported="true"
@@ -129,6 +130,7 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
+
         <service
             android:name=".Services.ThirdPartyService"
             android:exported="true"
@@ -159,7 +161,7 @@
             <meta-data
                 android:name="com.android.settings.summary"
                 android:value="@string/glyph_settings_summary" />
-             <meta-data
+            <meta-data
                 android:name="com.android.settings.order"
                 android:value="-255" />
         </activity>

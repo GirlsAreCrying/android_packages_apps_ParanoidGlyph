@@ -28,16 +28,21 @@ android_library {
     platform_apis: true,
 
     srcs: [
-        "src/**/*.java",
         "src/**/*.kt"
     ],
 
     static_libs: [
         "androidx.core_core",
-        "androidx.preference_preference",
-        "com.google.android.material_material",
         "SettingsLib",
         "IGlyphService-java",
+        "androidx.activity_activity-compose",
+        "androidx.compose.runtime_runtime",
+        "androidx.compose.ui_ui",
+        "androidx.compose.foundation_foundation",
+        "androidx.compose.material3_material3",
+        "androidx.compose.material_material-icons-core",
+        "androidx.compose.material_material-icons-extended",
+        "androidx.lifecycle_lifecycle-runtime-compose",
     ],
 }
 
@@ -46,8 +51,13 @@ android_app {
 
     defaults: ["glyph_app_defaults"],
 
-    asset_dirs: ["phone1/assets"],
-    resource_dirs: ["phone1/res"],
+    resource_dirs: [
+        "res",
+        "phone1/res",
+    ],
+    asset_dirs: [
+        "phone1/assets",
+    ],
 
     static_libs: [
         "ParanoidGlyph-core",
@@ -64,8 +74,13 @@ android_app {
 
     defaults: ["glyph_app_defaults"],
 
-    asset_dirs: ["phone2/assets"],
-    resource_dirs: ["phone2/res"],
+    resource_dirs: [
+        "res",
+        "phone2/res",
+    ],
+    asset_dirs: [
+        "phone2/assets",
+    ],
 
     static_libs: [
         "ParanoidGlyph-core",
